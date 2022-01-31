@@ -10,7 +10,7 @@ console.log('Задача 2.');
 let str2 = '2025-12-31';
 let arr2 = str2.split('-');
 let newStr2 = arr2[2] + '/' + arr2[1] + '/'+arr2[0];
-console.log(newStr2); 
+console.log(newStr2);
 
 //Задача 3.
 console.log('Задача 3.');
