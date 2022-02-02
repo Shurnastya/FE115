@@ -69,4 +69,3 @@ console.log('Задача 7.');
 let str7 = 'aa aba abba abbba abca abea';
 let reg7 = /ab{1,}a/gi; 
 console.log(str7.match(reg7));
- 
