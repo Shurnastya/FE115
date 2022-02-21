@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('img/fon3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.main_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Work Sans', sans-serif;
+}
+
+h1 {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-shadow: 9px -5px 2px #521b25;
+    font-size: 60px;
+    text-align: center;
+}
+
+.inputs {
+    margin-bottom: 10px;
+    width: 320px;
+    height: 50px;
+    background-color: #f9f9f9;
+    font-family: 'Work Sans', sans-serif;
+    padding-left: 20px;
+    border: 1px solid orange;
+    border-radius: 3px;
+}
+
+.cost {
+    border: none;
+    background-color: #3f51b5;
+    color: white;
+    width: 250px;
+    height: 50px;
+    padding: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 80px;
+}
+
+.price {
+    background-color: #3f51b5;
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 93%;
+    left: 25%;
+    width: 50%;
+    padding: 5px 0;
+    border-radius: 5px;
+}
