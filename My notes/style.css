@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    background-image: url(img/fonn.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.note_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: blueviolet;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.note_title {
+    color: white;
+    margin-top: 50px;
+    font-size: 80px;
+    margin-bottom: 10px;
+    text-shadow: 9px -5px 2px #521b25;
+}
+
+.note_text_title {
+    width: 200px;
+    height: 30px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #673ab7;
+}
+
+.note_text_content {
+    width: 320px;
+    height: 160px;
+    border-radius: 5px;
+    border: 1px solid #673ab7;
+    margin-bottom: 10px;
+}
+
+.note_button_submit {
+    border: 2px solid;
+    width: 100px;
+    height: 40px;
+    background-color: #673ab7;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 40px;
+}
