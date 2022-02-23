@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    padding: 20px;
+}
+
+.tabs-conteiner{
+    background: beige;
+}
+
+ul{
+    list-style: none;
+}
+
+.tabs-conteiner .tabs{
+    display: flex;
+    background: azure;
+}
+
+.tabs-conteiner .tabs li{
+    border-bottom: 2px solid #363;
+    padding: 20px;
+}
+
+.tabs-conteiner .tabs li:hover{
+    background: #336633;
+    color: #fff;
+    cursor: pointer;
+}
+
+.tabs-conteiner .tabs li.active{
+    background: #336633;
+    color: #fff;
+}
+
+.tabs-conteiner .tab-content li{
+    display: none;
+}
+
+.tabs-conteiner .tab-content li.active{
+    display: block;
+}
+
+.tooltip{
+    color: aqua;
+    cursor: pointer;
+    position: relative;
+}
+
+.tooltip-element {
+    position: relative;
+    background-color: #3e474f;
+    border-radius: 5px;
+    text-align: center;
+    width: 150px;
+    color: white;
+    transition: opacity 0.5s ease;
+    left: 13%;
+    margin-top: 10px;
+}
+.tooltip-element::after {
+    position: absolute;
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent transparent #3e474f transparent;
+    bottom: 97%;
+    left: 50%;
+    content: "";
+    margin-left: -10px;
+    transition: opacity 0.5s ease;
+}
+
+/*  РЕШЕНИЕ ЧЕРЕЗ CSS  */
+
+/* .tooltip::before,
+.tooltip::after {
+    left: 50%;
+    opacity: 0;
+    position: absolute;
+} 
+
+.tooltip:hover::before,
+.tooltip:focus::before,
+.tooltip:hover::after,
+.tooltip:focus::after {
+    opacity: 1;
+} 
+
+.tooltip {
+    opacity: 1;
+}
+
+.tooltip::before {
+    position: absolute;
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent transparent #3e474f transparent;
+    content: "";
+    margin-left: -2px;
+    transition: opacity 0.5s ease;
+    margin-top: 11px;
+}
+
+.tooltip::after {
+    position: absolute;
+    background-color: #3e474f;
+    border-radius: 5px;
+    color: #edeff0;
+    content: attr(title);
+    padding: 5px;
+    width: 150px;
+    transition: opacity 0.5s ease;
+    top: 160%;
+    text-align: center;
+    left: 20%;
+}  */
