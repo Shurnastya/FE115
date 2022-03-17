@@ -9,7 +9,7 @@ class User{
     };
 };
 
-class Contacts {
+class Contacts{
 
     constructor() {
         this.id = 0;
@@ -20,11 +20,11 @@ class Contacts {
         if(data.name.length > 0 && data.email.length > 0 && data.address.length > 0 && data.phone.length > 0)  {
         ++this.id;
 
-        let user = new User(data);
-        user.data.id = this.id;
-        this.contacts.push(user);
+            let user = new User(data);
+            user.data.id = this.id;
+            this.contacts.push(user);
+        };
     };
-};
 
     edit(id, data) {
         
@@ -44,13 +44,27 @@ class Contacts {
         return this.contacts;
     };
 
-    }
+    getUser() {
+        return this.user;
+    };
+
+};
 
 class ContactsApp extends Contacts{
 
     constructor() {
         super();
         this.init();
+    };
+
+    initObj(rez){
+        return rez.map(d => {
+            let {id: id, name: name, phone: phone, email: email, address:{city, street}} = d;
+            let address = {address: `${city} ${street}`};
+
+            this.add({id, name, phone, email, address});
+        });
+
     };
 
     init() {
@@ -108,7 +122,7 @@ class ContactsApp extends Contacts{
         formContacts.addEventListener('submit', (e) => {
             this.onAdd(e);
         });
-        
+
 
         let cookie = this.getCookie('contactsExp');
 
@@ -117,6 +131,10 @@ class ContactsApp extends Contacts{
         };
 
         let dataStorage = this.storage;
+
+        if(!dataStorage) {
+            this.getData();
+        };
 
         if(dataStorage){
             dataStorage.forEach(elem => this.add(elem.data));
@@ -200,7 +218,8 @@ class ContactsApp extends Contacts{
         });
 
         this.storage = this.contacts;
-        this.setCookie('contactsExp', 1, {'max-age': 100});
+
+        this.setCookie('contactsExp', 1, {'max-age': 864000});
     };
 
     get storage(){
@@ -212,7 +231,6 @@ class ContactsApp extends Contacts{
         let dataStorage = JSON.stringify(data);
         localStorage.setItem('contacts', dataStorage);
     };
-
 
     getSave(e, id, name, email, address, phone){
 
@@ -248,6 +266,17 @@ class ContactsApp extends Contacts{
         phone.contentEditable = 'true';
     };
 
+    async getData(){
+        let rez = [];
+    
+        await fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => response.json())
+            .then(json => json.map(data => rez.push(data)));
+
+        rez = this.initObj(rez);
+        return rez;
+    };
+
     // Cookie
     getCookie(name) {
         let matches = document.cookie.match(new RegExp(
@@ -275,7 +304,6 @@ class ContactsApp extends Contacts{
                 updatedCookie += "=" + optionValue;
             };
         };
-
             document.cookie = updatedCookie;
         };
 };

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
     margin: 0;
     padding: 0;
@@ -82,4 +83,90 @@ input {
 
 .contact_list_phone {
     margin-bottom: 10px;
+=======
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #cfcfcf;
+    margin: 40px;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+input {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.contact_save {
+    width: 150px;
+    height: 30px;
+    border: 2px solid;
+    border-radius: 50px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.contact_save:hover {
+    color: rgb(87, 87, 87);
+}
+
+.contact_list {
+    font-size: 20px;
+    margin-bottom: 30px;
+    width: 71%;
+}
+
+.contact_list_edit, .contact_list_remove{
+    width: 80px;
+    height: 30px;
+    border: 2px solid;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact_list_edit:hover {
+    color: rgb(87, 87, 87);
+}
+
+.contact_list_remove:hover {
+    color: rgb(87, 87, 87);
+}
+
+.contact_list_edit {
+    margin-right: 10px;
+}
+
+.contact_list_name,
+.contact_list_email,
+.contact_list_address,
+.contact_list_phone {
+    padding: 10px;
+    background-color: #a7a7a7;
+}
+
+.contact_list_phone {
+    margin-bottom: 10px;
+>>>>>>> 65e3e8d713a6572c28d732392b79f30e2428bc6a
 }
