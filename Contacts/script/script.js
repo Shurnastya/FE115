@@ -60,14 +60,14 @@ class ContactsApp extends Contacts{
     initObj(rez){
         return rez.map(d => {
             let {id: id, name: name, phone: phone, email: email, address:{city, street}} = d;
-            let address = {address: `${city} ${street}`};
+            let address = `${city} ${street}`;
 
             this.add({id, name, phone, email, address});
         });
 
     };
 
-    init() {
+    async init() {
 
         let formContacts = document.createElement('form');
         formContacts.setAttribute('class', 'contact');
@@ -133,7 +133,7 @@ class ContactsApp extends Contacts{
         let dataStorage = this.storage;
 
         if(!dataStorage) {
-            this.getData();
+            await this.getData();
         };
 
         if(dataStorage){
