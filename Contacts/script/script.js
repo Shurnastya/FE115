@@ -132,7 +132,7 @@ class ContactsApp extends Contacts{
 
         let dataStorage = this.storage;
 
-        if(!dataStorage) {
+        if(dataStorage == false) {
             await this.getData();
         };
 
